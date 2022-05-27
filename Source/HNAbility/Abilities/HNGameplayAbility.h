@@ -1,9 +1,11 @@
 #pragma once
+
+#include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
 #include "HNGameplayAbility.generated.h"
 
 UCLASS()
-class UHNGameplayAbility : public UGameplayAbility
+class HNABILITY_API UHNGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
 public:
@@ -12,12 +14,13 @@ public:
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Constrains")
 	float Range;
-
-	bool IsTargetPositionValid(const AActor* Target) const;
-
+	
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTargetHitDelegate, FGameplayEventData, Payload);
 	UPROPERTY()
 	FTargetHitDelegate TargetHit;
+
+	void PlayAnimation();
+	bool IsTargetPositionValid(const AActor* Target) const;
 
 private:
 	bool IsActorInFieldOfView(const AActor* Target) const;

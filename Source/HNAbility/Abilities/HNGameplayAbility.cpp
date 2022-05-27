@@ -1,7 +1,9 @@
 #include "HNGameplayAbility.h"
-#include "GameplayAbilities/Public/Abilities/Tasks/AbilityTask_PlayMontageAndWait.h"
-#include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
+
+void UHNGameplayAbility::PlayAnimation()
+{
+}
 
 bool UHNGameplayAbility::IsTargetPositionValid(const AActor* Target) const
 {

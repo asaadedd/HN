@@ -15,7 +15,10 @@
 		{
 			"Name": "HNAbility",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"GameplayAbilities"
+			]
 		},
 		{
 			"Name": "HNCharacter",
